@@ -1,50 +1,135 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+	font-family: 'Poppins', sans-serif;
+	background: #f5f7fa;
+	color: #2d3748;
+	line-height: 1.6;
 }
 
 header {
-    background: #35424a;
-    color: #ffffff;
-    padding: 10px 0;
-    text-align: center;
+	text-align: center;
+	margin-bottom: 3rem;
 }
 
-h1 {
-    margin: 0;
+header h1 {
+	font-size: 3rem;
+	color: #2d3748;
+	margin-bottom: 0.5rem;
 }
 
-nav {
-    margin: 20px 0;
+.subtitle {
+	color: #718096;
+	font-size: 1.2rem;
 }
 
-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    margin: 0 15px;
+.info-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 1.5rem;
+	margin-bottom: 3rem;
 }
 
-nav a:hover {
-    text-decoration: underline;
+.card {
+	background: white;
+	padding: 1.5rem;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	transition: transform 0.2s;
 }
 
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-    padding: 20px;
-    background: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.card:hover {
+	transform: translateY(-5px);
+}
+
+.card h3 {
+	color: #4a5568;
+	margin-bottom: 0.5rem;
+	font-size: 1.1rem;
+}
+
+.card p {
+	color: #2d3748;
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+
+.section-box {
+	background: white;
+	padding: 2rem;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	margin-bottom: 2rem;
+}
+
+.section-box h2 {
+	color: #2d3748;
+	margin-bottom: 1.5rem;
+	font-size: 1.5rem;
+}
+
+.dev-links {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 1rem;
+}
+
+.dev-card {
+	background: #f7fafc;
+	padding: 1rem;
+	border-radius: 8px;
+	text-decoration: none;
+	color: #4a5568;
+	text-align: center;
+	transition: all 0.2s;
+}
+
+.dev-card:hover {
+	background: #4299e1;
+	color: white;
+	transform: translateY(-2px);
+}
+
+.tools-links {
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.tool-btn {
+	background: #4299e1;
+	color: white;
+	padding: 0.8rem 1.5rem;
+	border-radius: 6px;
+	text-decoration: none;
+	transition: background 0.2s;
+}
+
+.tool-btn:hover {
+	background: #2b6cb0;
 }
 
 footer {
-    text-align: center;
-    padding: 10px 0;
-    background: #35424a;
-    color: #ffffff;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+	text-align: center;
+	margin-top: 3rem;
+	color: #718096;
+	font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+	.container {
+		padding: 1rem;
+	}
+
+	header h1 {
+		font-size: 2rem;
+	}
+
+	.info-cards {
+		grid-template-columns: 1fr;
+	}
 }
