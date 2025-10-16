@@ -10,6 +10,6 @@
     <p>Date/Heure actuelle : <?php echo date('Y-m-d H:i:s'); ?></p>
     <h2>Résumé du CV</h2>
     <p>>Je suis une personne rigoureux et investi qui saurai déployer l’énergie et la capacité de travail nécessaires afin de réussir les missions confiées pour le développement de l’entreprise.</p>
-
+	<a href="../phpinfo.php"></a>
 </body>
 </html>
