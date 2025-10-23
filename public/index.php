@@ -8,23 +8,19 @@ include_once __DIR__ . '/../includes/version.php';
 
 // Get the current branch name from the environment variable or set a default
 $branch = getenv('GIT_BRANCH') ?: 'dev';
-
-// Get the current PHP version
 $phpVersion = phpversion();
-
-// Get the current date and time
 $currentDateTime = date('Y-m-d H:i:s');
-
-// Start the HTML output
 ?>
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Homepage</title>
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
 	<h1>Bienvenue sur notre application PHP</h1>
 	<p>Version de l'application : <?php echo defined('APP_VERSION') ? APP_VERSION : 'inconnue'; ?></p>
