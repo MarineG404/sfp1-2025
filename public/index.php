@@ -1,47 +1,69 @@
 <?php
+define('APP_VERSION', '1.0.0');
+
 // Main entry point of the application
 
 // Include the version file to get the application version
-include_once '../includes/version.php';
+include_once __DIR__ . '/../includes/version.php';
 
 // Get the current branch name from the environment variable or set a default
 $branch = getenv('GIT_BRANCH') ?: 'dev';
-
-// Get the current PHP version
 $phpVersion = phpversion();
-
-// Get the current date and time
 $currentDateTime = date('Y-m-d H:i:s');
-
-// Start the HTML output
 ?>
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Accueil — SFP1</title>
+    <link rel="stylesheet" href="assets/css/index.css?v=1.0">
 </head>
+
 <body>
-    <h1>Bienvenue sur notre application PHP</h1>
-    <p>Version de l'application : <?php echo APP_VERSION; ?></p>
-    <p>Version de PHP : <?php echo $phpVersion; ?></p>
-    <p>Branche actuelle : <?php echo $branch; ?></p>
-    <p>Date et heure actuelle : <?php echo $currentDateTime; ?></p>
+    <header class="site-header">
+        <div class="wrap">
+            <h1>SFP1 2025</h1>
+            <p class="lead">Plateforme interne — environnement de dev</p>
+        </div>
+    </header>
 
-    <h2>Liens vers les pages des développeurs :</h2>
-    <ul>
-        <li><a href="developers/clement-kieu.php">Clémant KIEU</a></li>
-        <li><a href="developers/hieu-tran.php">Hieu TRAN</a></li>
-        <li><a href="developers/marine-gonnord.php">Marine Gonnord</a></li>
-        <li><a href="developers/alexandre-iglesias.php">Alexandre IGLESIAS</a></li>
-    </ul>
+    <main class="wrap main-grid">
+        <section class="card info">
+            <h2>Informations</h2>
+            <ul>
+                <li>Version de l'application : <?php echo defined('APP_VERSION') ? APP_VERSION : 'inconnue'; ?></li>
+                <li>Version de PHP : <?php echo $phpVersion; ?></li>
+                <li>Branche actuelle : <?php echo $branch; ?></li>
+                <li>Date et heure : <?php echo $currentDateTime; ?></li>
+            </ul>
+        </section>
 
-    <h2>Autres liens :</h2>
-    <ul>
-        <li><a href="phpinfo.php">Page phpInfo</a></li>
-        <li><a href="git-refresh.php">Actualiser le code source</a></li>
-    </ul>
+        <section class="card devs">
+            <h2>Développeurs</h2>
+            <ul>
+                <li><a href="developers/clement-kieu.php">Clément KIEU</a></li>
+                <li><a href="developers/hieu-tran.php">Hieu TRAN</a></li>
+                <li><a href="developers/marine-gonnord.php">Marine GONNORD</a></li>
+                <li><a href="developers/alexandre-iglesias.php">Alexandre IGLESIAS</a></li>
+            </ul>
+        </section>
+
+        <section class="card tools">
+            <h2>Outils</h2>
+            <ul>
+                <li><a href="phpinfo.php">phpinfo()</a></li>
+                <li><a href="git-refresh.php">Actualiser le code source</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <p>Dernière mise à jour : <?php echo $currentDateTime; ?></p>
+        </div>
+    </footer>
 </body>
+
 </html>
