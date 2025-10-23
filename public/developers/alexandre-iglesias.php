@@ -1,20 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Alexandre IGLESIAS</title>
-	<link rel="stylesheet" href="../assets/css/style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Page Développeur</title>
+    <link rel="stylesheet" href="../assets/css/styleAlex.css" />
 </head>
-
 <body>
-	<h1>Alexandre IGLESIAS</h1>
-	<p>Date/Heure: <?php echo date('Y-m-d H:i:s'); ?></p>
-	<h2>Résumé du CV</h2>
-	<p>Développeur web passionné avec une expérience dans la création d'applications PHP. Compétences en développement
-		front-end et back-end, ainsi qu'en gestion de bases de données.</p>
-	<a href="../index.php">Retour à l'accueil</a>
-</body>
+<header>
+    <h1>Page Développeur</h1>
+    <p class="lead">Alexandre IGLESIAS</p>
+</header>
 
+<main class="container">
+    <article id="unique-dev" class="card">
+        <h2>Alexandre IGLESIAS</h2>
+        <div class="meta">Heure CEST : <span class="generated-at"> </span></div>
+        <div class="meta">Heure de génération de la page : <span class="generated-at"> <?php echo date('Y-m-d H:i:s'); ?></span></div>
+        <section class="cv">
+            <h3>CV résumé</h3>
+
+            <h4>Formation</h4>
+            <ul>
+                <li>En cours : Bachelor Concepteur Développeur Web FullStack (2025 - 2026)</li>
+                <li>BTS SIO Option SLAM (2023 - 2025)</li>
+            </ul>
+
+            <h4>Compétences</h4>
+            <ul>
+                <li>Langages : PHP, JavaScript, React Native, Java</li>
+                <li>Bases de données : MySQL, PostgreSQL</li>
+                <li>Outils : Git, Docker, Linux</li>
+            </ul>
+        </section>
+    </article>
+</main>
+
+<script src="../assets/js/scriptAlex.js"></script>
+</body>
 </html>
