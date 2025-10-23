@@ -1,5 +1,5 @@
 <?php
-define('APP_VERSION', '1.1.1');
+define('APP_VERSION', 'dev-2024-06-27');
 
 // Main entry point of the application
 
