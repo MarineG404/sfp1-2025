@@ -1,50 +1,91 @@
-body {
-    font-family: Arial, sans-serif;
+/* Reset de base */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
     background-color: #f4f4f4;
-}
-
-header {
-    background: #35424a;
-    color: #ffffff;
-    padding: 10px 0;
-    text-align: center;
-}
-
-h1 {
-    margin: 0;
-}
-
-nav {
-    margin: 20px 0;
-}
-
-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    margin: 0 15px;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
     padding: 20px;
-    background: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-footer {
-    text-align: center;
-    padding: 10px 0;
-    background: #35424a;
-    color: #ffffff;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+/* Conteneur principal du CV */
+#cv {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+    "infos title"
+    "infos subtitle"
+    "infos summary"
+    "infos skills";
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Zones spécifiques */
+#title {
+    grid-area: title;
+    font-size: 2em;
+    color: #333;
+}
+
+#subtitle {
+    grid-area: subtitle;
+    font-size: 1.5em;
+    color: #666;
+}
+
+#summary {
+    grid-area: summary;
+    font-size: 1em;
+    color: #444;
+    line-height: 1.6;
+}
+
+#infos {
+    grid-area: infos;
+    background-color: #eaeaea;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 0.95em;
+}
+
+#skills {
+    grid-area: skills;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#skills li {
+    background-color: #007acc;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    #cv {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+      "title"
+      "subtitle"
+      "infos"
+      "summary"
+      "skills";
+    }
+
+    #skills {
+        justify-content: center;
+    }
 }
