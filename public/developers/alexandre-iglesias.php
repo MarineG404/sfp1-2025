@@ -33,6 +33,14 @@
                 <li>Outils : Git, Docker, Linux</li>
             </ul>
         </section>
+
+        <?php
+
+        shell_exec('git config --global --add safe.directory "C:/wamp64/www/PHP/sfp1-2025" 2>&1');
+        $output = shell_exec('git rev-parse --abbrev-ref HEAD 2>&1');
+        echo "<h4>Branche git actuelle :</h4> <p>" . htmlspecialchars($output) . "</p>";
+
+        ?>
     </article>
 </main>
 
