@@ -1,15 +1,19 @@
 <?php
-// This file will execute a Git pull command to update the source code and then redirect to the homepage.
+session_start();
 
-$repositoryPath = __DIR__ . '/../..'; // Path to the repository
-$command = 'git -C ' . escapeshellarg($repositoryPath) . ' pull';
+$script = realpath(__DIR__ . '/../scripts/gitpull.sh');
+if (!$script || !file_exists($script)) {
+    die('Script introuvable.');
+}
 
-// Execute the command
-$output = [];
-$returnVar = 0;
-exec($command, $output, $returnVar);
+exec($script, $output, $exitCode);
 
-// Redirect to the homepage
+if ($exitCode !== 0) {
+	die('Échec de la mise à jour Git. Code de sortie : ' . $exitCode);
+} else {
+	echo 'Mise à jour Git réussie.<br><pre>' . htmlspecialchars(implode("\n", $output)) . '</pre>';
+}
+
 header('Location: index.php');
-exit();
+exit;
 ?>
