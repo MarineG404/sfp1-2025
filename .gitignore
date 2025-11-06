@@ -4,3 +4,4 @@
 *.log
 vendor/
 .DS_Store
+config.php
