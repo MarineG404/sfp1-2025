@@ -51,6 +51,7 @@ $currentDateTime = date('Y-m-d H:i:s');
             <h1>SFP1 2025</h1>
             <p class="lead">Plateforme interne — environnement de dev</p>
         </div>
+		<p> Test pull</p>
     </header>
 
     <main class="wrap main-grid">
