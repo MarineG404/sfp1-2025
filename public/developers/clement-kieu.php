@@ -32,5 +32,4 @@ if (isset($_POST['pull'])) {
 	$output = shell_exec('cd C:\wamp64\www\fedora_cour_sup\sfp1-2025 && git pull 2>&1');
 	echo "<pre>$output</pre>";
 }
-
 ?>
