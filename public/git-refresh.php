@@ -14,6 +14,8 @@ if ($exitCode !== 0) {
 	echo 'Mise à jour Git réussie.<br><pre>' . htmlspecialchars(implode("\n", $output)) . '</pre>';
 }
 
+echo "coucou "
+
 // header('Location: index.php');
-exit;
+// exit;
 ?>
