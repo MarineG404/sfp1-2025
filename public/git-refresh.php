@@ -6,7 +6,7 @@ if (!$script || !file_exists($script)) {
     die('Script introuvable.');
 }
 
-exec($script, $output, $exitCode);
+exec('/bin/sh ' . escapeshellarg(__DIR__ . '/../scripts/gitpull.sh') . ' 2>&1', $output, $exitCode);
 
 if ($exitCode !== 0) {
 	die('Échec de la mise à jour Git. Code de sortie : ' . $exitCode);
@@ -14,6 +14,6 @@ if ($exitCode !== 0) {
 	echo 'Mise à jour Git réussie.<br><pre>' . htmlspecialchars(implode("\n", $output)) . '</pre>';
 }
 
-header('Location: index.php');
+// header('Location: index.php');
 exit;
 ?>
