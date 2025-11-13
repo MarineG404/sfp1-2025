@@ -12,7 +12,7 @@
 #!/bin/sh
 set -e
 
-REPO="/var/www/sfp1-2025"
+REPO="/var/www/html/sfp1-2025"
 LOG="/tmp/gitpull.log"
 
 cd "$REPO" || { echo "Répertoire introuvable: $REPO"; exit 1; }
