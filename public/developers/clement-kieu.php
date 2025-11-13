@@ -19,7 +19,7 @@
 		<button type="submit" name="pull">Mettre à jour (git pull)</button>
 	</form>
 
-	<button onclick="pull()">pull</button>
+	
 </body>
 
 </html>
