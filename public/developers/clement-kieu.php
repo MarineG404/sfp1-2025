@@ -26,7 +26,7 @@
 
 	function pull()
 	{
-
+		
 	}
 	/*$pull = shell_exec("git pull");*/
 
