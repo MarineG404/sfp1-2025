@@ -25,6 +25,12 @@
 </html>
 
 <?php
-	$resultatcommande = shell_exec('git branch --show-current');
-	echo "<p>$resultatcommande<p>";
+$resultatcommande = shell_exec('git branch --show-current');
+echo "<p>$resultatcommande<p>";
+
+if (isset($_POST['pull'])) {
+	echo "<p>Exécution de git pull...</p>";
+	$output = shell_exec('cd C:\wamp64\www\fedora_cour_sup\sfp1-2025 && git pull 2>&1');
+	echo "<pre>$output</pre>";
+}
 ?>
