@@ -15,7 +15,9 @@
 	<h2>Résumé du CV</h2>
 	<p>>Je suis une personne rigoureux et investi qui saurai déployer l’énergie et la capacité de travail nécessaires afin de réussir les missions confiées pour le développement de l’entreprise.</p>
 	<a href="../index.php">Acceuil</a>
-	<button onclick="pull()">pull</button>
+	<form method="post">
+		<button type="submit" name="pull">Mettre à jour (git pull)</button>
+	</form>
 
 </body>
 
@@ -24,8 +26,11 @@
 <?php
 $resultatcommande = shell_exec('git branch --show-current');
 echo "<p>$resultatcommande<p>";
-function pull() 
-{
-	shell_exec("git pull");
+
+if (isset($_POST['pull'])) {
+	echo "<p>Exécution de git pull...</p>";
+	$output = shell_exec('cd C:\wamp64\www\fedora_cour_sup\sfp1-2025 && git pull 2>&1');
+	echo "<pre>$output</pre>";
 }
+
 ?>
