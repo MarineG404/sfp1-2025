@@ -19,7 +19,6 @@
 		<button type="submit" name="pull">Mettre à jour (git pull)</button>
 	</form>
 
-	
 </body>
 
 </html>
@@ -30,7 +29,7 @@ echo "<p>$resultatcommande<p>";
 
 if (isset($_POST['pull'])) {
 	echo "<p>Exécution de git pull...</p>";
-	$output = shell_exec('cd C:\wamp64\www\fedora_cour_sup\sfp1-2025 && git pull 2>&1');
+	$output = shell_exec('cd '. cheminDossier.'\sfp1-2025 && git pull 2>&1');
 	echo "<pre>$output</pre>";
 }
 ?>
