@@ -24,14 +24,14 @@
 </html>
 
 <?php
-include './config.php';
+include '../../config.php';
 
 $resultatcommande = shell_exec('git branch --show-current');
 echo "<p>$resultatcommande<p>";
 
 if (isset($_POST['pull'])) {
 	echo "<p>Exécution de git pull...</p>";
-	$output = shell_exec('cd '. cheminDossier.'\sfp1-2025 && git pull 2>&1');
+	$output = shell_exec('cd '. dirname(__DIR__,2).'\sfp1-2025 && git pull 2>&1');
 	echo "<pre>$output</pre>";
 }
 ?>
