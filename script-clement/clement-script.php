@@ -17,5 +17,5 @@ $db = new PDO('pgsql:host=localhost;port=5432;dbname=' . dbname, user, mdp);
 #vérif si la table existe sinon la créer 
 
 $db->exec('CREATE TABLE IF NOT EXISTS Photo (nom varchar, dateajout date,photo text)');
-$db->exec("INSERT INTO Photo (nom,dateajout,photo) VALUES ('clementphoto',to_date('date(Y-m-d)','yyyy/mm/dd'),'../photosite/" . $nomphoto . "')");
+$db->exec("INSERT INTO Photo (nom,dateajout,photo) VALUES ('clementphoto',CURRENT_DATE ,'../photosite/" . $nomphoto . "')");
 echo ('On a bien ajouté la photo');

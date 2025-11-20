@@ -24,6 +24,8 @@
 </html>
 
 <?php
+include './config.php';
+
 $resultatcommande = shell_exec('git branch --show-current');
 echo "<p>$resultatcommande<p>";
 
